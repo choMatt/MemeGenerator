@@ -6,11 +6,18 @@ import Form from './components/Form'
 
 function App() {
 
+  const [memesData, setMemesData] = useState({})
   const [memes, setMemes] = useState({
     topText: '', 
     bottomText:  '',
     memeImage: '',
   })
+ 
+  useState(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(response => response.json())
+      .then(data => setMemesData(data))
+  }, [])
 
   function handleChange(event){
     console.dir(event)
@@ -22,8 +29,19 @@ function App() {
       }
     })
   }
-
   
+  function getNewImage(event){
+    event.preventDefault()
+    const memesArray =  memesData.data.memes
+    const randNum = Math.floor(Math.random() * memesArray.length)
+    const memeImage = memesArray[randNum].url
+    setMemes((prevSetMemes) => {
+      return {
+        ...prevSetMemes,
+        memeImage: memeImage
+      }
+    })
+ }
 
   return (
     <div>
@@ -31,8 +49,13 @@ function App() {
       <main>
       <Form 
         handleChange={handleChange}
+        getNewImage={getNewImage}
       />
-      <Meme />
+      <Meme 
+        memeImage={memes.memeImage}
+        topText={memes.topText}
+        bottomText={memes.bottomText}
+      />
       </main>
     </div>
   )
