@@ -71,3 +71,28 @@
     color: var(--color-accent);
     font-size: 0.75rem;
   }
+
+  /* FORM */
+
+  .form--flex{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns:repeat(2, 100px);
+    border: 1px solid black;
+  }
+
+  .form--grid{
+    width: 90%;
+    max-width: 700px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:5px;
+  }
+
+  .form__button{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
