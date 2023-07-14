@@ -16,7 +16,7 @@ export default function Form(props) {
             className="form__input form__input--bottomText"
             onChange={(event) => props.handleChange(event)}
           />
-          <button type="button" className="form__button">
+          <button type="button" className="form__button" onClick={(event) => props.getNewImage(event)}>
             Get new image
           </button>
         </form>
