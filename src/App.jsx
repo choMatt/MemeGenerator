@@ -6,23 +6,24 @@ import Form from './components/Form'
 
 function App() {
 
-  const [memesData, setMemesData] = useState({
+  const [memes, setMemes] = useState({
     topText: '', 
     bottomText:  '',
     memeImage: '',
   })
 
-  console.log(memesData.topText, memesData.bottomText)
-
   function handleChange(event){
+    console.dir(event)
     const {value, name} = event.target
-    setMemesData((prevMemeData) => {
+    setMemes((prevMemeData) => {
       return {
         ...prevMemeData,
         [name]: value
       }
     })
   }
+
+  
 
   return (
     <div>
