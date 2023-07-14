@@ -1,0 +1,71 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  :root{
+    /** Color Palette */
+    --color-primary: #672280;
+    --color-secodary: #A626D3;
+    --color-accent: #ffffff;
+
+    /** Typography */
+    /* Fonts */
+    --ff-main: 'Inter', sans-serif;
+
+    /* Font-size */
+    --fs-base: 16px;
+  }
+  
+  .header{
+    height: 65px;
+    display: flex;
+    align-items: center;
+    background: rgb(103,34,128);
+    font-family: var(--ff-main);
+    padding: 0px 20px;
+    background: linear-gradient(90deg,
+        var(--color-primary),
+        var(--color-secodary)
+    );
+  }
+
+  .header__image{
+    width: 31.31px;
+    height: 26.22px;
+  }
+
+  .header__title{
+    font-size: 1.297rem;
+    color: var(--color-accent);
+    margin-right: auto;
+    margin-left:8px;
+  }
+
+  .header__sub-title{
+    color: var(--color-accent);
+    font-size: 0.75rem;
+  }
