@@ -12,7 +12,7 @@ function App() {
     memeImage: "",
   });
 
-  useState(() => {
+  useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
       .then((data) => setMemesData(data));
